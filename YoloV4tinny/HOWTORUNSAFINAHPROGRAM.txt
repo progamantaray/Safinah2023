@@ -1,0 +1,33 @@
+DILAKUKAN PADA ANACONDA COMMAND PROMPT DENGAN MERUJUK LOKASI FOLDER PROGRAM MASTER SAFINAH
+ALAMAT FOLDER PADA UTILS.PY DISESUAIKAN DENGAN KOMPUTERMU
+(cd D:\GAMANTARAY\safinah_vision-master)
+
+1# Create Environment Tensorflow CPU 
+conda env create -f conda-cpu.yml
+conda activate yolov4-cpu
+
+1# Create Environment Tensorflow GPU
+conda env create -f conda-gpu.yml
+conda activate yolov4-gpu
+
+--IF HAVE NOT INSTALL THE REQUIREMENTS--I
+# TensorFlow CPU                        I
+pip install -r requirements.txt         I
+                                        I
+# TensorFlow GPU                        I
+pip install -r requirements-gpu.txt     I
+----------------------------------------I
+
+2# yolov4-tiny
+python save_model.py --weights ./data/yolov4-tiny.weights --output ./checkpoints/yolov4-tiny-416 --input_size 416 --model yolov4 --tiny
+
+3# Run yolov4 on video
+python detect_video.py --weights ./checkpoints/yolov4-tiny-416 --size 416 --model yolov4 --video ./data/video/lama.mp4 --output ./detections/results.avi --tiny
+
+3# Run yolov4 on webcam
+python detect_video.py --weights ./checkpoints/yolov4-tiny-416 --size 416 --model yolov4 --video 0 --output ./detections/results.avi --tiny
+
+
+###NOTE###
+PROGRAM KITA ADA DI UTILS.PY DENGAN KODINGAN WABA
+confident value ada di detect_video

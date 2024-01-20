@@ -1,0 +1,10 @@
+{
+    "detect": [
+        {
+            "contributors": "waba",
+            "info": "[ Cx Cy Xmin Ymin Xmax Ymax ]",
+            "bola_merah": "(604, 118, 589.0, 107.0, 620.0, 129.0)",
+            "bola_hijau": "(626, 153, 612.0, 121.0, 640.0, 185.0)"
+        }
+    ]
+}
